@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>College Timetable — Semester I</title>
+  <style>
+    :root{
+      --bg:#f4f7fb; --card:#ffffff; --accent:#0b63d8; --muted:#6b7280;
+      --table-border: #d6dde8;
+    }
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:var(--bg); color:#111;
+    }
+    .wrap{max-width:1000px; margin:28px auto; padding:20px;}
+    header{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    h1{margin:0; font-size:1.4rem; color:var(--accent)}
+    p.lead{margin:0;color:var(--muted)}
+    .card{background:var(--card); padding:18px; border-radius:10px; box-shadow:0 6px 18px rgba(11,99,216,0.06); margin-top:16px}
+    table{width:100%; border-collapse:collapse; border:1px solid var(--table-border);}
+    caption{caption-side:top; text-align:left; padding:12px 16px; font-weight:600; color:var(--accent)}
+    thead th{background:#f1f6ff; padding:10px 12px; text-align:left; font-weight:700; border-bottom:1px solid var(--table-border)}
+    tbody th{padding:10px 12px; background:#fbfdff; border-right:1px solid var(--table-border)}
+    td{padding:10px 12px; border-bottom:1px solid var(--table-border); vertical-align:middle}
+    .time-col{width:110px}
+    .subject{font-weight:600}
+    .room{font-size:0.9rem; color:var(--muted)}
+    .small{font-size:0.88rem; color:#374151}
+    /* nested table style */
+    .nested{width:100%; border:1px dashed #dbe7ff; border-radius:6px}
+    .nested td, .nested th{padding:6px 8px; border:none; font-size:0.85rem}
+    /* responsive */
+    @media (max-width:780px){
+      .wrap{padding:12px}
+      table, thead, tbody, th, td, tr{display:block}
+      thead{display:none}
+      tr{margin-bottom:10px; border:1px solid var(--table-border); border-radius:8px; overflow:hidden}
+      td{display:flex; justify-content:space-between; align-items:center}
+      td::before{content:attr(data-label); flex:0 0 45%; padding-right:8px; color:var(--muted); font-weight:600}
+      .time-col{width:auto}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Govt. College — Semester I Timetable</h1>
+        <p class="lead">Week: Monday — Friday | Format: <em>Lecture / Lab / Tutorial</em></p>
+      </div>
+      <div class="small">Updated: <strong>Oct 30, 2025</strong></div>
+    </header>
+
+    <div class="card" aria-labelledby="timetable-heading">
+      <h2 id="timetable-heading" style="font-size:1rem;margin:0 0 12px 0">Class Timetable (B.Tech — Computer Science)</h2>
+
+      <!-- Main timetable: days horizontally, time slots vertically -->
+      <table role="table" aria-describedby="timetable-caption">
+        <caption id="timetable-caption">Weekly class schedule showing lectures, labs and tutorials. Cells include room & instructor info; nested table used for extra details.</caption>
+        <thead>
+          <tr>
+            <th class="time-col">Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- 09:00 - 10:00 -->
+          <tr>
+            <th scope="row" class="time-col">09:00 — 10:00</th>
+
+            <!-- Monday: Lecture -->
+            <td data-label="Monday">
+              <div class="subject">Data Structures</div>
+              <div class="room">Room A201</div>
+              <div class="small">Prof. A. Sharma</div>
+            </td>
+
+            <!-- Tuesday: Combined lecture (colspan across Tue+Wed) -->
+            <td data-label="Tuesday" colspan="2">
+              <div class="subject">Discrete Mathematics (Double session)</div>
+              <div class="room">Room B101</div>
+              <div class="small">Dr. M. Rao</div>
+            </td>
+
+            <!-- Thursday: Empty / Self-study -->
+            <td data-label="Thursday">
+              <div class="subject">Self-study</div>
+              <div class="small">Library / Online</div>
+            </td>
+
+            <!-- Friday: Lecture -->
+            <td data-label="Friday">
+              <div class="subject">Engineering Mechanics</div>
+              <div class="room">Room C301</div>
+              <div class="small">Prof. S. Gupta</div>
+            </td>
+          </tr>
+
+          <!-- 10:00 - 11:00 -->
+          <tr>
+            <th scope="row" class="time-col">10:00 — 11:00</th>
+
+            <!-- Monday: Tutorial nested table (shows TA contact & topics) -->
+            <td data-label="Monday">
+              <div class="subject">DS Tutorial</div>
+              <div class="room">Lab L2</div>
+              <!-- nested table with details -->
+              <table class="nested" aria-label="DS tutorial details">
+                <tbody>
+                  <tr><td><strong>TA:</strong></td><td>R. Verma</td></tr>
+                  <tr><td><strong>Topics:</strong></td><td>Linked lists, Stacks</td></tr>
+                </tbody>
+              </table>
+            </td>
+
+            <!-- Tuesday: Lecture -->
+            <td data-label="Tuesday">
+              <div class="subject">Computer Networks</div>
+              <div class="room">Room A102</div>
+              <div class="small">Dr. P. Kaur</div>
+            </td>
+
+            <!-- Wednesday: Lecture (this cell is part of prior colspan, so skipped) -->
+            <!-- Thursday: Lab spans 2 hours (rowspan) -->
+            <td data-label="Thursday" rowspan="2">
+              <div class="subject">Programming Lab (C++)</div>
+              <div class="room">Computer Lab — L1</div>
+              <div class="small">Lab In-charge: S. Mehta</div>
+            </td>
+
+            <!-- Friday: Seminar (colspan across 11-12 and 12-01) -->
+            <td data-label="Friday" colspan="2">
+              <div class="subject">Guest Seminar: AI Ethics</div>
+              <div class="room">Auditorium</div>
+              <div class="small">Invited Speaker: Dr. N. Iyer</div>
+            </td>
+          </tr>
+
+          <!-- 11:00 - 12:00 -->
+          <tr>
+            <th scope="row" class="time-col">11:00 — 12:00</th>
+
+            <!-- Monday: Lecture -->
+            <td data-label="Monday">
+              <div class="subject">Operating Systems</div>
+              <div class="room">Room B202</div>
+              <div class="small">Prof. R. Bhat</div>
+            </td>
+
+            <!-- Tuesday: Lab (rowspan for 2 hours: 11-1) -->
+            <td data-label="Tuesday" rowspan="2">
+              <div class="subject">Digital Circuits Lab</div>
+              <div class="room">Electronics Lab</div>
+              <div class="small">Lab Asst: V. Joshi</div>
+            </td>
+
+            <!-- Wednesday: Practical slot (nested table with group info) -->
+            <td data-label="Wednesday">
+              <div class="subject">Group Practical</div>
+              <div class="room">Project Room</div>
+              <table class="nested" aria-label="Group practical details">
+                <tbody>
+                  <tr><td><strong>Group A:</strong></td><td>Topic: IoT Sensor</td></tr>
+                  <tr><td><strong>Group B:</strong></td><td>Topic: Web App</td></tr>
+                </tbody>
+              </table>
+            </td>
+
+            <!-- Thursday: (occupied by Programming Lab rowspan) skipped -->
+            <!-- Friday: (occupied by Seminar colspan earlier) skipped -->
+          </tr>
+
+          <!-- 12:00 - 13:00 -->
+          <tr>
+            <th scope="row" class="time-col">12:00 — 13:00</th>
+
+            <!-- Monday: Break / Lunch -->
+            <td data-label="Monday">
+              <div class="subject">Lunch Break</div>
+              <div class="small">—</div>
+            </td>
+
+            <!-- Tuesday: (occupied by Digital Circuits Lab rowspan) skipped -->
+            <!-- Wednesday: Lecture -->
+            <td data-label="Wednesday">
+              <div class="subject">Software Engineering</div>
+              <div class="room">Room A201</div>
+              <div class="small">Prof. L. Nair</div>
+            </td>
+
+            <!-- Thursday: Lecture -->
+            <td data-label="Thursday">
+              <div class="subject">Database Systems</div>
+              <div class="room">Room B103</div>
+              <div class="small">Dr. R. Banerjee</div>
+            </td>
+
+            <!-- Friday: (seminar still continuing hence this cell is skipped) -->
+          </tr>
+
+          <!-- 13:00 - 14:00 -->
+          <tr>
+            <th scope="row" class="time-col">13:00 — 14:00</th>
+
+            <!-- Monday: Elective (colspan across Mon+Tue) -->
+            <td data-label="Monday" colspan="2">
+              <div class="subject">Elective: Principles of ML</div>
+              <div class="room">Room C104</div>
+              <div class="small">Prof. A. Nanda</div>
+            </td>
+
+            <!-- Wednesday: Tutorial -->
+            <td data-label="Wednesday">
+              <div class="subject">SE Tutorial</div>
+              <div class="room">Room A201</div>
+              <div class="small">TA: K. Singh</div>
+            </td>
+
+            <!-- Thursday: Free / Clubs -->
+            <td data-label="Thursday">
+              <div class="subject">Clubs & Activities</div>
+              <div class="small">Coding Club / Robotics Club</div>
+            </td>
+
+            <!-- Friday: Short Lecture -->
+            <td data-label="Friday">
+              <div class="subject">Mini Lecture: Career Guidance</div>
+              <div class="small">Counseling Cell</div>
+            </td>
+          </tr>
+
+          <!-- 14:00 - 16:00 Double block example -->
+          <tr>
+            <th scope="row" class="time-col">14:00 — 16:00</th>
+
+            <!-- Monday: Lab double (rowspan across two hours but here single row representing two-hour slot) -->
+            <td data-label="Monday">
+              <div class="subject">Embedded Systems Lab (2-hr)</div>
+              <div class="room">Micro Lab</div>
+              <div class="small">Instructor: A. Patel</div>
+            </td>
+
+            <!-- Tuesday: Free -->
+            <td data-label="Tuesday">
+              <div class="subject">Self-study / Assignment</div>
+            </td>
+
+            <!-- Wednesday: Workshop (colspan across Wed+Thu for 2-hrs each) -->
+            <td data-label="Wednesday" colspan="2">
+              <div class="subject">Workshop: Git & DevOps</div>
+              <div class="room">Computer Lab — L3</div>
+              <div class="small">Trainer: Industry Expert</div>
+            </td>
+
+            <!-- Friday: Make-up classes -->
+            <td data-label="Friday">
+              <div class="subject">Make-up / Extra Classes</div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <!-- Legend -->
+      <div style="margin-top:12px; font-size:0.95rem; color:var(--muted)">
+        <strong>Legend:</strong> <span style="margin-left:8px">Lecture — regular class</span> · <span style="margin-left:8px">Lab — practical session</span> · <span style="margin-left:8px">Tutorial — small-group help</span>
+      </div>
+    </div>
+
+    <!-- small footer -->
+    <footer style="text-align:center; margin-top:16px; color:var(--muted); font-size:0.9rem">
+      © 2025 Government College • Timetable subject to change — consult department notice board for updates.
+    </footer>
+  </div>
+</body>
+</html>
