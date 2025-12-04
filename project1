@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Course Curriculum — HTML Elements Demo</title>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; padding: 2rem; max-width: 900px; margin: auto; }
+    header { border-bottom: 2px solid #eee; padding-bottom: 1rem; margin-bottom: 1.5rem; }
+    h1 { margin: 0 0 0.5rem 0; }
+    .example { background:#fafafa; border:1px solid #eee; padding:1rem; margin:0.75rem 0; border-radius:8px; }
+    code { background:#f4f4f4; padding:0.1rem 0.3rem; border-radius:4px; }
+    footer { margin-top:2rem; border-top:1px dashed #ddd; padding-top:1rem; font-size:0.9rem; color:#555 }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Course Curriculum — Web Page Demo</h1>
+    <p>Demonstration of basic HTML text elements: headings, paragraphs, <strong>bold</strong>, <em>italic</em>, <u>underline</u>, special characters, and different types of lists.</p>
+  </header>
+
+  <section>
+    <h2>Headings</h2>
+    <div class="example">
+      <h1>H1 — Course Title</h1>
+      <h2>H2 — Module Title</h2>
+      <h3>H3 — Lesson Title</h3>
+      <h4>H4 — Sub-lesson</h4>
+      <h5>H5 — Note</h5>
+      <h6>H6 — Fine print</h6>
+    </div>
+  </section>
+
+  <section>
+    <h2>Paragraphs and Inline Formatting</h2>
+    <div class="example">
+      <p>This is a regular paragraph introducing the module. You can emphasize words with <strong>bold</strong>, <em>italics</em>, and <u>underline</u>. Combine them: <strong><em>strong italic</em></strong> or <em><u>italic underline</u></em>.</p>
+
+      <p>Special characters are written using HTML entities: &amp; (ampersand), &lt; (less-than), &gt; (greater-than), © (copyright), ™ (trademark), € (euro). You can also write mathematical signs like ≤ and ≥.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ordered List (Numbered)</h2>
+    <div class="example">
+      <ol>
+        <li>Module 1: Introduction to Web
+          <ol>
+            <li>Lesson 1.1 — HTML basics</li>
+            <li>Lesson 1.2 — Text formatting</li>
+          </ol>
+        </li>
+        <li>Module 2: Styling with CSS</li>
+        <li>Module 3: JavaScript Fundamentals</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <h2>Unordered List (Bulleted)</h2>
+    <div class="example">
+      <ul>
+        <li>Course prerequisites
+          <ul>
+            <li>Basic computer skills</li>
+            <li>Willingness to learn</li>
+          </ul>
+        </li>
+        <li>Course outcomes
+          <ul>
+            <li>Build static web pages</li>
+            <li>Understand responsive layouts</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Description List (Definition List)</h2>
+    <div class="example">
+      <dl>
+        <dt>Module</dt>
+        <dd>A major unit of study grouped by topic.</dd>
+
+        <dt>Lesson</dt>
+        <dd>A single teaching session or topic inside a module.</dd>
+
+        <dt>Assessment</dt>
+        <dd>An activity used to measure learning (quiz, assignment, project).</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section>
+    <h2>Nested Lists & Mixed Lists</h2>
+    <div class="example">
+      <ol>
+        <li>Week 1 — Foundations
+          <ul>
+            <li>Topic A — HTML syntax</li>
+            <li>Topic B — Semantic tags</li>
+          </ul>
+        </li>
+        <li>Week 2 — Styling
+          <ol type="a">
+            <li>Selectors</li>
+            <li>Box Model
+              <ul>
+                <li>Margin</li>
+                <li>Border</li>
+                <li>Padding</li>
+              </ul>
+            </li>
+          </ol>
+        </li>
+      </ol>
+
+      <p>Example of a mixed list combining a description list inside an unordered list item:</p>
+      <ul>
+        <li>Project components
+          <dl>
+            <dt>Frontend</dt>
+            <dd>HTML, CSS, JavaScript</dd>
+            <dt>Backend</dt>
+            <dd>API, Database</dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>Want this page as a downloadable HTML file or want me to add more styling (colors, fonts, responsive layout)? Tell me what you want next.</p>
+  </footer>
+</body>
+</html>
