@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Selling Items</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 32px;
+            color: #222;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 30px;
+        }
+
+        .card {
+            background: white;
+            width: 260px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+        }
+
+        .product-title {
+            font-size: 18px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .product-desc {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 20px;
+            color: green;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+
+        .buy-btn {
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .buy-btn:hover {
+            background: #005dc1;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Best Selling Items</h1>
+
+<div class="container">
+
+    <!-- Card 1 -->
+    <div class="card">
+        <img src="./WhatsApp Image 2025-11-27 at 15.41.52_7551f8b3.jpg" alt="Laptop">
+        <div class="product-title">HP 255 G10 Laptop (16GB RAM, 512GB SSD, Ryzen 3)</div>
+        <div class="product-desc">A fast and reliable laptop ideal for daily work, browsing, and multitasking.</div>
+        <div class="price">₹999</div>
+        <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+        <img src="https://m.media-amazon.com/images/I/81Os1SDWpcL._SL1500_.jpg" alt="iPhone">
+        <div class="product-title">Apple iPhone 15 (128GB) - Green</div>
+        <div class="product-desc">Smooth performance, stunning photos, and an advanced A16 chip.</div>
+        <div class="price">₹1499</div>
+        <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+        <img src="./WhatsApp Image 2025-11-27 at 15.41.53_d8ee8dba.jpg" alt="Microwave">
+        <div class="product-title">LG 28 L Convection Microwave Oven</div>
+        <div class="product-desc">Perfect for baking, grilling, and fast heating with 28L capacity.</div>
+        <div class="price">₹799</div>
+        <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+        <img src="./WhatsApp Image 2025-11-27 at 15.39.30_f89149d2.jpg" alt="Earbuds">
+        <div class="product-title">boAt Nirvana Zenith Pro (2025)</div>
+        <div class="product-desc">Premium wireless earbuds with clear sound & long battery life.</div>
+        <div class="price">₹1299</div>
+        <button class="buy-btn">Buy Now</button>
+    </div>
+
+</div>
+
+</body>
+</html>
