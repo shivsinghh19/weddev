@@ -1,0 +1,44 @@
+body{
+    font-family: Arial,sans-serif;
+    background-color: #acaca0;
+    text-align: center;
+    margin: 20px;
+}
+h1{
+    color: black;
+    font-size: 50px;
+}
+.product_box{
+    background-color: white;
+    width: 350px;
+    margin: 0 auto;
+    padding: 15px;
+    border: 2px solid gray;
+    border-radius: 8px;
+}
+div img{
+    width: 350px;
+    height: auto;
+    border-radius: 5px;
+}
+.product_box h2{
+    color: black;
+    font-size: 20px;
+}
+.para{
+    color: dimgray;
+    font-size: 14px;
+    margin: 10px;
+}
+#head{
+    color: red;
+    font-weight: 500px;
+    margin-bottom: 15px;
+}
+input{
+    background-color: darkblue;
+    color: white;
+    border: 5px;
+    border: none;
+    padding: 10px 20px;
+}
